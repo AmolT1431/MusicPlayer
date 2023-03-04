@@ -6,15 +6,15 @@
     <ImageView
         android:layout_width="334dp"
         android:layout_height="508dp"
-        android:layout_x="35dp"
-        android:layout_y="58dp"
+        android:layout_x="40dp"
+        android:layout_y="11dp"
         android:src="@drawable/app_logo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="119dp"
-        android:layout_y="650dp"
+        android:layout_x="115dp"
+        android:layout_y="520dp"
         android:text="Music Player"
         android:textSize="30dp" />
 
