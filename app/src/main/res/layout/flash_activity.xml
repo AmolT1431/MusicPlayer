@@ -8,7 +8,7 @@
         android:layout_height="508dp"
         android:layout_x="35dp"
         android:layout_y="58dp"
-        android:src="@drawable/App_Logo" />
+        android:src="@drawable/app_logo" />
 
     <TextView
         android:layout_width="wrap_content"

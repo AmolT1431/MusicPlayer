@@ -20,8 +20,8 @@
         android:id="@+id/b1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="164dp"
-        android:layout_y="410dp"
+        android:layout_x="147dp"
+        android:layout_y="408dp"
         android:backgroundTint="#E466E8"
         android:text="Go"
         android:textSize="40dp" />
