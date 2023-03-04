@@ -4,27 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#64D3B9"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="36dp"
-        android:layout_y="262dp"
-        android:text="This is Music player"
-        android:textColor="@color/white"
+        android:layout_x="182dp"
+        android:layout_y="336dp"
+        android:text="HI"
         android:textSize="40dp" />
-
-    <Button
-        android:id="@+id/b1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="147dp"
-        android:layout_y="408dp"
-        android:backgroundTint="#E466E8"
-        android:text="Go"
-        android:textSize="40dp" />
-
 
 </AbsoluteLayout>
