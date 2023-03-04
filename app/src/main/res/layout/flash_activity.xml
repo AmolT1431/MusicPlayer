@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="334dp"
+        android:layout_height="508dp"
+        android:layout_x="35dp"
+        android:layout_y="58dp"
+        android:src="@drawable/App_Logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="119dp"
+        android:layout_y="650dp"
+        android:text="Music Player"
+        android:textSize="30dp" />
+
+</AbsoluteLayout>
