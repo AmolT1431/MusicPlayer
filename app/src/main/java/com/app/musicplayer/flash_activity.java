@@ -23,6 +23,7 @@ public class flash_activity extends AppCompatActivity {
             public void run() {
                 Intent i=new Intent(flash_activity.this,MainActivity.class);
                 startActivity(i);
+                finish();
 
             }
         },1500);
