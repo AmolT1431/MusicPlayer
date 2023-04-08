@@ -51,7 +51,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         listView = (ListView) findViewById(R.id.listview);
-        //getsong
         context = getApplicationContext();
         SongNames = new ArrayList<String>();
         songId = new ArrayList<String>();

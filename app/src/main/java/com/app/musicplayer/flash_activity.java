@@ -17,6 +17,8 @@ public class flash_activity extends AppCompatActivity {
         setContentView(R.layout.flash_activity);
         // For hide Actionbar
         getSupportActionBar().hide();
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //For flash Activity
         new Handler().postDelayed(new Runnable() {
             @Override
