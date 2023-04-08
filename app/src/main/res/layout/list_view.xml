@@ -25,7 +25,6 @@
             android:id="@+id/txtSong"
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@id/imgSong"
-            android:text="Song Name"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:padding="5dp"
