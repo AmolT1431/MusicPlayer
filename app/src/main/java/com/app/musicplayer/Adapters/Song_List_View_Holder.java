@@ -1,12 +1,8 @@
 package com.app.musicplayer.Adapters;
 
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.musicplayer.Activitys.MyBottomSheetFragment;
-import com.app.musicplayer.Activitys.Song_Menu_Dialog;
-import com.app.musicplayer.MainActivity;
 import com.app.musicplayer.PlayerActivity;
 import com.app.musicplayer.R;
 import com.app.musicplayer.Song;

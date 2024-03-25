@@ -14,7 +14,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bottom_sheet_background"
-            />
+            >
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/round_button"
+                />
+        </RelativeLayout>
     </RelativeLayout>
 
 </RelativeLayout>
