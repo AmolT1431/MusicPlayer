@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#ff121212"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="52dp"
+        android:id="@+id/song_img"
+        android:layout_height="52dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="5dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:background="#76D67A" />
+    <TextView
+        android:layout_width="290dp"
+        android:id="@+id/song_name"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/song_img"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="10dp"
+        android:lines="1"
+        android:textColor="@color/white"
+        android:textSize="18.7dp"
+        android:text="Om Namh Shivay .........."
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/lyrics"
+        android:layout_height="wrap_content"
+        android:text="LYRICS"
+        android:layout_toRightOf="@id/song_img"
+        android:layout_below="@+id/song_name"
+        android:layout_marginLeft="10dp"
+        android:textSize="8.5dp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:background="#B8B3B3"
+        />
+    <TextView
+        android:layout_width="250dp"
+        android:id="@+id/art_name"
+        android:layout_toRightOf="@id/lyrics"
+        android:layout_below="@id/song_name"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:textColor="#B8B3B3"
+        android:lines="1"
+        android:layout_marginLeft="5dp"
+        android:textSize="13.5dp"
+        android:text="Om Namh Shivay >>>"
+        />
+    <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:id="@+id/three_dote"
+        android:background="@drawable/encore_icon_more_android_24"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_above="@id/art_name"
+
+        />
+
+</RelativeLayout>
