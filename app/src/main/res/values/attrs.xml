@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <attr name="state_small_glyph" format="boolean" tools:ignore="DuplicateDefinition" />
+    <attr name="state_collapsed" format="boolean" />
+    <attr name="state_icon_active" format="boolean" />
+</resources>

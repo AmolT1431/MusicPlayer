@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="60dp"
+    android:background="@color/black">
+
+    <View
+        android:id="@+id/home"
+        android:layout_width="411dp"
+        android:layout_height="60dp"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/home_view"
+        android:layout_width="48.0dip"
+        android:layout_height="48.0dip"
+        android:contentDescription="@null"
+        android:duplicateParentState="true"
+        android:focusable="false"
+        android:importantForAccessibility="no"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="182dp"
+        tools:layout_editor_absoluteY="6dp" />
+
+    <ImageView
+        android:id="@+id/home_img"
+        android:layout_width="28.0dip"
+        android:layout_height="28.0dip"
+        android:contentDescription="@null"
+        android:duplicateParentState="true"
+        android:focusable="false"
+        android:importantForAccessibility="no"
+        app:srcCompat="@drawable/encore_icon_home_24"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:textColor="@color/light_gray"
+        android:textSize="12dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="189dp"
+        tools:layout_editor_absoluteY="44dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

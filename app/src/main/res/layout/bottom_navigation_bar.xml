@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom_navigation"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/signupsplitflow_bottom_gradient">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/home"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="70dp"
+            android:background="@drawable/ic_eis_home" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/home"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:text="Home"
+            android:textColor="@color/light_gray"
+            android:textSize="12dp" />
+
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="9dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="70dp"
+            android:layout_toRightOf="@+id/home"
+            android:background="@drawable/encore_icon_search" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/home"
+            android:text="Search"
+            android:textColor="@color/light_gray"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/library"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="65dp"
+            android:layout_toRightOf="@+id/search"
+            android:background="@drawable/encore_icon_collection" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/search"
+            android:text="Your Libray"
+            android:textColor="@color/light_gray"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/Premium"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/library"
+            android:background="@drawable/start_screen_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Premium"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/library"
+            android:text="Permium"
+            android:textColor="@color/light_gray"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+</RelativeLayout>
