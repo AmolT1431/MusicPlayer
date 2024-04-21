@@ -16,11 +16,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-import androidx.palette.graphics.Palette;
 
-import com.app.musicplayer.Player;
+import com.app.musicplayer.Model_Class.Player;
 import com.app.musicplayer.R;
-import com.app.musicplayer.Song;
+import com.app.musicplayer.Model_Class.Song;
 
 public class Player_Dialog_Fragment extends DialogFragment {
     Song song;

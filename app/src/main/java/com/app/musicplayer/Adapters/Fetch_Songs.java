@@ -1,16 +1,15 @@
-package com.app.musicplayer;
+package com.app.musicplayer.Adapters;
 
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Toast;
+
+import com.app.musicplayer.Model_Class.Song;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -5,39 +5,25 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.palette.graphics.Palette;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaPlayer;
-import android.nfc.Tag;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.app.musicplayer.Activitys.Flutter_Activity;
-import com.app.musicplayer.Adapters.Song_List_View_Holder;
 
 import com.app.musicplayer.Fragments.Home_Fragment;
 import com.app.musicplayer.Fragments.Library_Fragment;
@@ -46,16 +32,9 @@ import com.app.musicplayer.Fragments.Premium_Fragment;
 import com.app.musicplayer.Fragments.Search_Fragment;
 import com.app.musicplayer.Layouts.Black_Navigation_Bar;
 import com.app.musicplayer.Layouts.Bottom_Navigation_Bar;
+import com.app.musicplayer.Model_Class.Player;
+import com.app.musicplayer.Model_Class.Song;
 import com.app.musicplayer.Permission.Permission;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.karumi.dexter.Dexter;
-import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionDeniedResponse;
-import com.karumi.dexter.listener.PermissionGrantedResponse;
-import com.karumi.dexter.listener.PermissionRequest;
-import com.karumi.dexter.listener.single.PermissionListener;
-
-import java.io.IOException;
 
 
 public class MainActivity extends Flutter_Activity {

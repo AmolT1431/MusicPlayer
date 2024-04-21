@@ -10,7 +10,6 @@ import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -20,10 +19,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.musicplayer.Activitys.MyBottomSheetFragment;
-import com.app.musicplayer.MainActivity;
-import com.app.musicplayer.PlayerActivity;
 import com.app.musicplayer.R;
-import com.app.musicplayer.Song;
+import com.app.musicplayer.Model_Class.Song;
 
 import java.util.ArrayList;
 

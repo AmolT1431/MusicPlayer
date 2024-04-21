@@ -4,22 +4,18 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.app.musicplayer.Adapters.Song_List_View_Holder;
-import com.app.musicplayer.Fetch_Songs;
-import com.app.musicplayer.MainActivity;
+import com.app.musicplayer.Adapters.Fetch_Songs;
 import com.app.musicplayer.R;
-import com.app.musicplayer.Song;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.app.musicplayer.Model_Class.Song;
 
 import java.util.ArrayList;
 

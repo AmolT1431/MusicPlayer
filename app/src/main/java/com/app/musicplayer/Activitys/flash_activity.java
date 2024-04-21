@@ -1,4 +1,4 @@
-package com.app.musicplayer;
+package com.app.musicplayer.Activitys;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.app.musicplayer.MainActivity;
+import com.app.musicplayer.R;
 
 
 public class flash_activity extends AppCompatActivity {
@@ -17,7 +20,7 @@ public class flash_activity extends AppCompatActivity {
 
         //For flash Activity
         new Handler().postDelayed(() -> {
-            Intent i=new Intent(flash_activity.this,MainActivity.class);
+            Intent i=new Intent(flash_activity.this, MainActivity.class);
             startActivity(i);
             finish();
 

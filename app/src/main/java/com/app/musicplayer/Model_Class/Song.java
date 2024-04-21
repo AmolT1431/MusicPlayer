@@ -1,4 +1,4 @@
-package com.app.musicplayer;
+package com.app.musicplayer.Model_Class;
 
 import android.graphics.Bitmap;
 
