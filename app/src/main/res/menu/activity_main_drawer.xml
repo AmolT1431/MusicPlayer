@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_camera"
+        android:icon="@drawable/ic_eis_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_gallery"
+        android:icon="@drawable/encore_icon_search"
+        android:title="search" />
+    <item
+        android:id="@+id/nav_slideshow"
+        android:icon="@drawable/encore_icon_collection"
+        android:title="Your library" />
+    <item
+        android:id="@+id/nav_manage"
+        android:icon="@drawable/start_screen_logo"
+        android:title="Premium" />
+
+
+</menu>
