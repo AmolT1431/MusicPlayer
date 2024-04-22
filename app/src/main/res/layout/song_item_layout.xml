@@ -60,23 +60,21 @@
     <RelativeLayout
         android:id="@+id/three_dote_layout"
         android:layout_width="50dp"
-        android:layout_height="60dp"
-        android:layout_alignParentRight="true">
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true">
 
         <ImageView
             android:id="@+id/three_dote"
             android:layout_width="25dp"
             android:layout_height="24dp"
             android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="6dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/encore_icon_more_android_24"
 
             />
 
-
     </RelativeLayout>
-
 
 </RelativeLayout>

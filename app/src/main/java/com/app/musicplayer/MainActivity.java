@@ -93,6 +93,7 @@ public class MainActivity extends Flutter_Activity {
                 if (play_button == true) {
                     play.setBackgroundResource(R.drawable.encore_icon_pause_24);
                     player.start();
+                    updateSeekBar();
                     play_button = false;
                 } else {
                     play.setBackgroundResource(R.drawable.encore_icon_play);
@@ -115,7 +116,7 @@ public class MainActivity extends Flutter_Activity {
             }
         });
         Home_Fragment homeFragment = new Home_Fragment();
-        Search_Fragment searchFragment = new Search_Fragment();
+        Search_Fragment searchFragment = new Search_Fragment(MainActivity.this);
         Library_Fragment library_Fragment = new Library_Fragment();
         Premium_Fragment premiumFragment = new Premium_Fragment();
 

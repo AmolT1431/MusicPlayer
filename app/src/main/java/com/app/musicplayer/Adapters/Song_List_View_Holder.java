@@ -1,8 +1,6 @@
 package com.app.musicplayer.Adapters;
 
 
-
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -60,7 +58,7 @@ public class Song_List_View_Holder extends RecyclerView.Adapter<Song_List_View_H
         holder.art_name.setText(song.getArt_name());
         if (song.getSong_img() != null) {
             holder.song_img.setImageBitmap(song.getSong_img());
-            img=song.getSong_img();
+            img = song.getSong_img();
         } else {
             holder.song_img.setImageResource(R.drawable.app_logo1);
             img = BitmapFactory.decodeResource(context.getResources(), R.drawable.app_logo1);
@@ -69,11 +67,6 @@ public class Song_List_View_Holder extends RecyclerView.Adapter<Song_List_View_H
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String song_name = song.getName();
-                Intent play = new Intent(context, PlayerActivity.class);
-                play.putExtra("position", pos);
-                play.putExtra("SongName", song_name);
-                play.putExtra("songId", song.getId());
 
                 if (listener != null) {
                     listener.onItemClick(song.getName(), song.getId(), song.getArt_name(), img);
@@ -104,14 +97,13 @@ public class Song_List_View_Holder extends RecyclerView.Adapter<Song_List_View_H
         ImageView song_img;
 
 
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.song_name);
             song_img = itemView.findViewById(R.id.song_img);
             art_name = itemView.findViewById(R.id.art_name);
 
-            three_dote_layout=itemView.findViewById(R.id.three_dote_layout);
+            three_dote_layout = itemView.findViewById(R.id.three_dote_layout);
 
         }
     }
