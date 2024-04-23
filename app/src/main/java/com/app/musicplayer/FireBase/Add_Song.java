@@ -42,11 +42,10 @@ public class Add_Song {
         add_song(audioUri, title, artist);
         add_image(title, title, imageBytes);
 
-
     }
 
     public void add_song(Uri audioUri, String title, String artist) {
-        StorageReference songRef = mStorageRef.child("Songs/" + title + "/" + "song/" + title + ".mp3");
+        StorageReference songRef = mStorageRef.child("Songs").child(title).child("song").child(title + ".mp3");
         if (artist == null) {
             artist = "music_player";
         } else {
@@ -72,7 +71,7 @@ public class Add_Song {
     }
 
     public void add_image(String imageName, String name, byte[] imageBytes) {
-        StorageReference imageRef = mStorageRef.child("Songs/").child(name + "/").child("images/" + imageName + ".jpg");
+        StorageReference imageRef = mStorageRef.child("Songs").child(name).child("images").child(imageName + ".jpg");
         if (imageBytes == null) {
             byte[] Bytes = drawableToBytes(R.drawable.app_logo1);
             imageBytes = Bytes;
