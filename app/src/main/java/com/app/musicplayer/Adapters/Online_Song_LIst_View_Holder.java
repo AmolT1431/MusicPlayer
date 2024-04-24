@@ -70,7 +70,7 @@ public class Online_Song_LIst_View_Holder extends RecyclerView.Adapter<Online_So
             @Override
             public void onClick(View view) {
                 if (listener != null) {
-                    listener.onItemClick(song.getArtist(), song.getSong_url(), song.getArtist(), song.getImage_url());
+                    listener.onItemClick(song.getTitle(), song.getSong_url(), song.getArtist(), song.getImage_url());
                 }
             }
         });
