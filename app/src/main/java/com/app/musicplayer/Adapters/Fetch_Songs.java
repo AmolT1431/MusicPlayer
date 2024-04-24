@@ -1,6 +1,7 @@
 package com.app.musicplayer.Adapters;
 
 import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -42,8 +43,7 @@ public class Fetch_Songs {
             int Song_Name = cursor.getColumnIndex(MediaStore.Audio.Media.TITLE);
             int SongId = cursor.getColumnIndex(MediaStore.Audio.Media._ID);
             int artistName = cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST);
-            int album_img= cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM_ID);
-
+            int album_img = cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM_ID);
 
             do {
                 Song item = new Song();
@@ -52,17 +52,17 @@ public class Fetch_Songs {
                 String Id = cursor.getString(SongId);
                 String album_img_Id = cursor.getString(album_img);
 
-                //
                 item.setName(st);
                 item.setId(Id);
                 item.setArt_name(artist);
                 Bitmap albumArt = getAlbumArt(album_img_Id);
+                item.setSong_uri(getSongUri(Id));
+
                 if (albumArt != null) {
                     item.setSong_img(albumArt);
                 }
 
-                if(!isUnknownArtist(artist)&&!isUnknownName(st))
-                {
+                if (!isUnknownArtist(artist) && !isUnknownName(st)) {
                     Song_list.add(item);
                 }
 
@@ -83,10 +83,18 @@ public class Fetch_Songs {
         }
         return null;
     }
+
     private boolean isUnknownArtist(String artist) {
         return artist == null || artist.isEmpty() || artist.equals("<unknown>");
     }
+
     private boolean isUnknownName(String name) {
         return name == null || name.isEmpty() || name.equals("");
     }
+
+    private Uri getSongUri(String songId) {
+        long id = Long.parseLong(songId);
+        return ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, id);
+    }
+
 }

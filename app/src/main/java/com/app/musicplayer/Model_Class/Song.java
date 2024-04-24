@@ -1,11 +1,21 @@
 package com.app.musicplayer.Model_Class;
 
 import android.graphics.Bitmap;
+import android.net.Uri;
 
 public class Song {
     String name;
     String id;
     String art_name;
+    Uri song_uri;
+
+    public Uri getSong_uri() {
+        return song_uri;
+    }
+
+    public void setSong_uri(Uri song_uri) {
+        this.song_uri = song_uri;
+    }
 
     public String getArt_name() {
         return art_name;

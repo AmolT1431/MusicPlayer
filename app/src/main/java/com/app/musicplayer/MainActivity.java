@@ -11,6 +11,7 @@ import androidx.palette.graphics.Palette;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -35,6 +36,10 @@ import com.app.musicplayer.Layouts.Bottom_Navigation_Bar;
 import com.app.musicplayer.Model_Class.Player;
 import com.app.musicplayer.Model_Class.Song;
 import com.app.musicplayer.Permission.Permission;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.transition.Transition;
 
 
 public class MainActivity extends Flutter_Activity {
@@ -133,6 +138,12 @@ public class MainActivity extends Flutter_Activity {
 
             }
         });// item update listener
+        searchFragment.onUpdateListener(new Search_Fragment.update() {
+            @Override
+            public void onChange(String song_name, String song_url, String artist, String Song_img_url) {
+                Ui_item_change(song_name, song_url, artist, Song_img_url);
+            }
+        });
 
         bottom_card.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,6 +200,7 @@ public class MainActivity extends Flutter_Activity {
 
 
     public void Ui_item_change(String song_name, String id, String artist, @NonNull Bitmap Song_img) {
+
         play_card.setVisibility(View.VISIBLE);
         play_layout.setVisibility(View.VISIBLE);
         player.play(id);
@@ -210,6 +222,50 @@ public class MainActivity extends Flutter_Activity {
 
             }
         });
+    }
+    public void Ui_item_change(String song_name, String song_url, String artist, String image_url) {
+
+        play_card.setVisibility(View.VISIBLE);
+        play_layout.setVisibility(View.VISIBLE);
+        progressBar.setMax(player.getMax());
+        player.playSong_form_url(song_url);
+        updateSeekBar();
+        play.setBackgroundResource(R.drawable.encore_icon_pause_24);
+        song_name_txt.setText(song_name);
+        art.setText(artist);
+        Glide.with(context).load(image_url).diskCacheStrategy(DiskCacheStrategy.ALL).into(song_img);
+
+        // Load image from URL
+        Glide.with(context)
+                .asBitmap()
+                .load(image_url)
+                .into(new CustomTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                        // Use Palette to get dominant color
+                        Palette.from(resource).generate(new Palette.PaletteAsyncListener() {
+                            @Override
+                            public void onGenerated(@Nullable Palette palette) {
+                                if (palette != null) {
+                                    Palette.Swatch dominantSwatch = palette.getDominantSwatch();
+                                    if (dominantSwatch != null) {
+                                        int dominantColor = dominantSwatch.getRgb();
+                                        play_layout.setCardBackgroundColor(dominantColor);
+                                        // play_card.setBackgroundColor(dominantColor);
+                                        play_card.setCardBackgroundColor(dominantColor);
+                                    }
+                                }
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onLoadCleared(@Nullable Drawable placeholder) {
+                        // Placeholder cleanup
+                    }
+                });
+
+
     }
 
 

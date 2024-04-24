@@ -1,11 +1,14 @@
 package com.app.musicplayer.Activitys;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
@@ -13,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import com.app.musicplayer.FireBase.Add_Song;
 import com.app.musicplayer.MainActivity;
 import com.app.musicplayer.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -20,13 +24,31 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 
 public class MyBottomSheetFragment extends BottomSheetDialogFragment {
+    Uri uri;
+    Button button;
+    Context context;
+
+    public MyBottomSheetFragment(Context context,Uri uri) {
+        this.uri = uri;
+        this.context=context;
+    }
+
+    public MyBottomSheetFragment() {
+    }
 
     View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-         view=inflater.inflate(R.layout.bottom_sheet_layout, container, false);
+        view = inflater.inflate(R.layout.bottom_sheet_layout, container, false);
+        button = view.findViewById(R.id.upload_song);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Add_Song().uploadSong(context,  uri);
+            }
+        });
         return view;
     }
 

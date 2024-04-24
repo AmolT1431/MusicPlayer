@@ -1,16 +1,8 @@
 package com.app.musicplayer.Adapters;
 
-
-import android.annotation.SuppressLint;
-import android.content.ContentResolver;
-import android.content.ContentUris;
 import android.content.Context;
-import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,23 +15,28 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.musicplayer.Activitys.MyBottomSheetFragment;
-import com.app.musicplayer.R;
+import com.app.musicplayer.FireBase.FSong;
 import com.app.musicplayer.Model_Class.Song;
+import com.app.musicplayer.R;
+import com.app.musicplayer.Testing;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.ArrayList;
 
-public class Song_List_View_Holder extends RecyclerView.Adapter<Song_List_View_Holder.ViewHolder> {
+
+public class Online_Song_LIst_View_Holder extends RecyclerView.Adapter<Online_Song_LIst_View_Holder.ViewHolder> {
     Context context;
-    ArrayList<Song> Song_list;
+    ArrayList<FSong> Song_list;
 
     private OnItemClickListener listener;
 
-    public Song_List_View_Holder(Context context, ArrayList<Song> song_list) {
+    public Online_Song_LIst_View_Holder(Context context, ArrayList<FSong> song_list) {
         this.context = context;
         this.Song_list = song_list;
     }
 
-    public Song_List_View_Holder(Context context, ArrayList<Song> song_list, OnItemClickListener listener) {
+    public Online_Song_LIst_View_Holder(Context context, ArrayList<FSong> song_list, OnItemClickListener listener) {
         this.context = context;
         this.Song_list = song_list;
         this.listener = listener;
@@ -56,27 +53,24 @@ public class Song_List_View_Holder extends RecyclerView.Adapter<Song_List_View_H
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Song song = Song_list.get(position);
+        FSong song = Song_list.get(position);
+        int pos = position;
 
 
-        MyBottomSheetFragment bottomSheetFragment = new MyBottomSheetFragment(context,song.getSong_uri());
-
-        Bitmap img;
-
-        holder.name.setText(song.getName());
-        holder.art_name.setText(song.getArt_name());
-        if (song.getSong_img() != null) {
-            holder.song_img.setImageBitmap(song.getSong_img());
-            img = song.getSong_img();
+        holder.name.setText(song.getTitle());
+        holder.art_name.setText(song.getArtist());
+        if (song.getImage_url() != null) {
+            Glide.with(context).load(song.getImage_url()).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.song_img);
         } else {
             holder.song_img.setImageResource(R.drawable.app_logo1);
-            img = BitmapFactory.decodeResource(context.getResources(), R.drawable.app_logo1);
+
+
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (listener != null) {
-                    listener.onItemClick(song.getName(), song.getId(), song.getArt_name(), img);
+                    listener.onItemClick(song.getArtist(), song.getSong_url(), song.getArtist(), song.getImage_url());
                 }
             }
         });
@@ -84,8 +78,8 @@ public class Song_List_View_Holder extends RecyclerView.Adapter<Song_List_View_H
         holder.three_dote_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("holder",song.getSong_uri().toString());
-                bottomSheetFragment.show(((FragmentActivity) view.getContext()).getSupportFragmentManager(), bottomSheetFragment.getTag());
+
+              //  bottomSheetFragment.show(((FragmentActivity) view.getContext()).getSupportFragmentManager(), bottomSheetFragment.getTag());
             }
         });
 
@@ -116,8 +110,7 @@ public class Song_List_View_Holder extends RecyclerView.Adapter<Song_List_View_H
     }
 
     public interface OnItemClickListener {
-        void onItemClick(String song_name, String id, String artist, Bitmap Song_img);
+        void onItemClick(String song_name, String url, String artist, String image_url);
     }
-
 
 }

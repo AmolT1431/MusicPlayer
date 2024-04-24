@@ -1,6 +1,7 @@
 package com.app.musicplayer.Model_Class;
 
 import android.content.Context;
+import android.media.AudioAttributes;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.provider.MediaStore;
@@ -41,6 +42,20 @@ public class Player {
         mediaPlayer.start();
 
     }
+    public void playSong_form_url(String songUrl) {
+        try {
+            mediaPlayer.reset();
+            mediaPlayer.setAudioAttributes(new AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .build());
+            mediaPlayer.setDataSource(songUrl);
+            mediaPlayer.prepare();
+            mediaPlayer.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void stop() {
         if (mediaPlayer.isPlaying()) {
@@ -67,5 +82,7 @@ public class Player {
     {
         return mediaPlayer.getDuration();
     }
+
+
 
 }

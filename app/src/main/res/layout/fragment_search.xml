@@ -6,37 +6,9 @@
     android:background="@color/white"
     tools:context=".Fragments.Search_Fragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp">
-
-        <ImageView
-            android:id="@+id/songImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_launcher_background" />
-
-        <TextView
-            android:id="@+id/titleTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/songImageView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:text="Title"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/artistTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/titleTextView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:text="Artist"
-            android:textSize="16sp" />
-    </RelativeLayout>
-
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/song_list"
+       />
 </RelativeLayout>
